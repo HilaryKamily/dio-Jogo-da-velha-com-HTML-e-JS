@@ -6,6 +6,10 @@ mudarJogador('X');
 
 function escolherQuadrado(id) {
 
+    if (vencedor !== null) {
+        return;
+    }
+
     var quadrado = document.getElementById(id);
 
     if (quadrado.innerHTML !== '-') {
@@ -73,21 +77,21 @@ function checaVencedor() {
         return;
     }
 
-    // l = 1, 2, 3, c = 1
+    // l = 1, 2, 3, c = 3
     if (checaSequencia(quadrado3, quadrado6, quadrado9)) {
         mudaCorQuadrado(quadrado3, quadrado6, quadrado9);
         mudarVencedor(quadrado3);
         return;
     }
 
-    // l = 1, 2, 3, c = 1
+    // l = 1, 2, 3, c = 1, 2, 3
     if (checaSequencia(quadrado1, quadrado5, quadrado9)) {
         mudaCorQuadrado(quadrado1, quadrado5, quadrado9);
         mudarVencedor(quadrado1);
         return;
     }
 
-    // l = 1, 2, 3, c = 1
+    // l = 1, 2, 3, c = 1, 2, 3
     if (checaSequencia(quadrado3, quadrado5, quadrado7)) {
         mudaCorQuadrado(quadrado3, quadrado5, quadrado7);
         mudarVencedor(quadrado3);
